@@ -34,3 +34,8 @@
 
 ## Nota de abordagem
 Separar a responsabilidade pelos assassinatos de qualquer generalização sobre transtornos dissociativos ou condições de saúde mental. O roteiro pode apresentar memória não confiável sem equiparar uma condição clínica a violência.
+
+## Memória de Amelie sobre Catherine (confirmado)
+- Amelie era pequena quando Catherine morreu e sempre acreditou que a morte da irmã foi causada por um acidente.
+- Suas lembranças de Catherine são vagas, mas afetuosas: ela amava muito a irmã e guardava carinho por ela.
+- Amelie desconhecia que Mave matou Catherine e que os pais de Mave encobriram o caso.
