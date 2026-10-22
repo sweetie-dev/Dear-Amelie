@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://dy54fnvbki56v"]
+
+[ext_resource type="Texture2D" uid="uid://blmrqrhjy5smk" path="res://Textures/inicio-jardim.png" id="1_ikggh"]
+[ext_resource type="Script" uid="uid://82saa3xf3ugb" path="res://Scripts/menu.gd" id="1_qw3o3"]
+[ext_resource type="FontFile" uid="uid://bgor1cesupyok" path="res://Textures/KiwiSoda.ttf" id="3_i4ne0"]
+[ext_resource type="Texture2D" uid="uid://1upebldtnt6b" path="res://Textures/cat respirando.png" id="3_wtpb2"]
+[ext_resource type="FontFile" uid="uid://bp7jf8u088ps6" path="res://Textures/rainyhearts.ttf" id="4_i4ne0"]
+[ext_resource type="AudioStream" uid="uid://bsi8hvtmsqc1i" path="res://musicas/menu1.mp3" id="5_6b1of"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtpb2"]
+atlas = ExtResource("3_wtpb2")
+region = Rect2(0, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qw3o3"]
+atlas = ExtResource("3_wtpb2")
+region = Rect2(48, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b1of"]
+atlas = ExtResource("3_wtpb2")
+region = Rect2(96, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4ne0"]
+atlas = ExtResource("3_wtpb2")
+region = Rect2(144, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4q7ee"]
+atlas = ExtResource("3_wtpb2")
+region = Rect2(192, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odmt8"]
+atlas = ExtResource("3_wtpb2")
+region = Rect2(240, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5yml"]
+atlas = ExtResource("3_wtpb2")
+region = Rect2(288, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnfj6"]
+atlas = ExtResource("3_wtpb2")
+region = Rect2(336, 0, 48, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pdtoi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtpb2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qw3o3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6b1of")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4ne0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4q7ee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odmt8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5yml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnfj6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Control" type="Control" unique_id=418031974]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qw3o3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1871100294]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="InicioJardim" type="Sprite2D" parent="." unique_id=1561506066]
+modulate = Color(0.7683069, 0.7683071, 0.76830703, 1)
+self_modulate = Color(0.8500505, 0.85005057, 0.8500505, 1)
+texture_filter = 1
+position = Vector2(573.5, 325.99997)
+scale = Vector2(0.78059906, 0.6757812)
+texture = ExtResource("1_ikggh")
+
+[node name="Label" type="Label" parent="." unique_id=1739033279]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.5
+offset_top = -123.0
+offset_right = 132.5
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_i4ne0")
+theme_override_font_sizes/font_size = 80
+text = "Dear Amelie..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1805116931]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = 27.0
+offset_right = 105.0
+offset_bottom = 209.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=1483036635]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_i4ne0")
+theme_override_font_sizes/font_size = 50
+text = "Começar"
+
+[node name="exit" type="Button" parent="VBoxContainer" unique_id=1906543041]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_i4ne0")
+theme_override_font_sizes/font_size = 50
+text = "Sair"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=832424997]
+texture_filter = 1
+position = Vector2(381, 522)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_pdtoi")
+autoplay = "default"
+frame_progress = 0.871148
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=701124798]
+stream = ExtResource("5_6b1of")
+volume_db = 15.856
+pitch_scale = 0.62
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]

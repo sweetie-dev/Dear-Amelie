@@ -1,0 +1,526 @@
+[gd_scene format=3 uid="uid://bkwjcgcvjo4n4"]
+
+[ext_resource type="Script" uid="uid://du0h2475ufald" path="res://Scripts/level.gd" id="1_3ca7f"]
+[ext_resource type="Texture2D" uid="uid://inmfu3geubul" path="res://Textures/terreno_grama.jpg" id="1_hjsbj"]
+[ext_resource type="PackedScene" uid="uid://h8opfg86wa26" path="res://Player/player.tscn" id="2_hjsbj"]
+[ext_resource type="Texture2D" uid="uid://btog3m2nihri0" path="res://Textures/Road009C_1K-JPG_Color.jpg" id="2_pb8y7"]
+[ext_resource type="PackedScene" uid="uid://beeyspedck41y" path="res://cenarios/casa_amelie.tscn" id="3_cwqvt"]
+[ext_resource type="AudioStream" uid="uid://ibse1ekdlq7b" path="res://musicas/suspense.mp3" id="4_5mrsh"]
+[ext_resource type="PackedScene" uid="uid://pbcxtd4d8pap" path="res://cenarios/diario.tscn" id="4_safpt"]
+[ext_resource type="AudioStream" uid="uid://5hapkla8wjtt" path="res://musicas/homem-andando.mp3" id="6_vnv7o"]
+[ext_resource type="AudioStream" uid="uid://b8v1x4c0wueg0" path="res://musicas/coracao-acelerado.mp3" id="7_d5x7l"]
+[ext_resource type="AudioStream" uid="uid://dcsxgowywklpc" path="res://musicas/som_fala.mp3" id="8_rtcij"]
+[ext_resource type="AudioStream" uid="uid://bvry3vsxla57s" path="res://musicas/som_ligacao.mp3" id="9_rtcij"]
+[ext_resource type="FontFile" uid="uid://bp7jf8u088ps6" path="res://Textures/rainyhearts.ttf" id="10_ukwr8"]
+[ext_resource type="AudioStream" uid="uid://d13cf0bkea82j" path="res://musicas/som-ambiente.mp3" id="12_hy0rb"]
+[ext_resource type="PackedScene" uid="uid://ca7ytpayvcjga" path="res://cenarios/carro.tscn" id="13_mxp4k"]
+[ext_resource type="PackedScene" uid="uid://dym5qr0imb13i" path="res://cenarios/casas.tscn" id="14_d7v53"]
+[ext_resource type="PackedScene" uid="uid://qjxssajhthiv" path="res://cenarios/casas1.tscn" id="15_0qmeg"]
+[ext_resource type="PackedScene" uid="uid://c1sqbnb06iviq" path="res://cenarios/poste_luz.tscn" id="16_ta7ci"]
+[ext_resource type="PackedScene" uid="uid://beg1jx7urvgkb" path="res://cenarios/casas2.tscn" id="17_lh335"]
+[ext_resource type="PackedScene" uid="uid://sxs2b1ermjdd" path="res://cenarios/arvores.tscn" id="18_u6cys"]
+[ext_resource type="PackedScene" uid="uid://d0lrwd23bnyv4" path="res://cenarios/mercadinho.tscn" id="19_368ro"]
+[ext_resource type="AudioStream" uid="uid://cfyotaptukvut" path="res://musicas/porta-abrindo.mp3" id="21_kogck"]
+
+[sub_resource type="Gradient" id="Gradient_cwqvt"]
+offsets = PackedFloat32Array(0, 0.54133546, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.16940668, 0.1874649, 0.32448664, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5mrsh"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_safpt"]
+noise = SubResource("FastNoiseLite_5mrsh")
+color_ramp = SubResource("Gradient_cwqvt")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gjl0y"]
+sky_top_color = Color(0, 0, 0.34509805, 1)
+sky_horizon_color = Color(0.012037811, 0.014803732, 0.08978663, 1)
+sky_cover = SubResource("NoiseTexture2D_safpt")
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.0013972071, 1.2032688e-08, 0.08223241, 1)
+
+[sub_resource type="Sky" id="Sky_vnv7o"]
+sky_material = SubResource("ProceduralSkyMaterial_gjl0y")
+
+[sub_resource type="Environment" id="Environment_d5x7l"]
+background_mode = 2
+sky = SubResource("Sky_vnv7o")
+tonemap_mode = 3
+glow_enabled = true
+glow_intensity = 0.1
+glow_bloom = 0.25
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.8
+volumetric_fog_albedo = Color(0.78431374, 0.63529414, 0.47843137, 1)
+volumetric_fog_emission = Color(0.6509804, 0.4862745, 0.32156864, 1)
+volumetric_fog_emission_energy = 0.1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kogck"]
+initial_velocity_min = 0.14999999
+initial_velocity_max = 0.14999999
+gravity = Vector3(0, 0, 0)
+scale_min = 0.19999999
+scale_max = 0.79999995
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_574oa"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.22745098, 0.19607843, 0.16862746, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_tn76l"]
+material = SubResource("StandardMaterial3D_574oa")
+size = Vector2(0.3, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_umreq"]
+size = Vector3(15, 1, 15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hjsbj"]
+albedo_texture = ExtResource("1_hjsbj")
+uv1_scale = Vector3(8, 8, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_80vhd"]
+size = Vector3(15, 1, 15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hy0rb"]
+albedo_color = Color(0.82789975, 0.9526263, 0.83476937, 1)
+albedo_texture = ExtResource("2_pb8y7")
+uv1_scale = Vector3(-0.99, -6.43, 1)
+uv2_offset = Vector3(0.18, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mxp4k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_368ro"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_368ro"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_368ro"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3ca7f"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_kogck"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_574oa"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="Animation" id="Animation_cwqvt"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5mrsh"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_safpt"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_safpt"]
+_data = {
+&"RESET": SubResource("Animation_cwqvt"),
+&"fade_in": SubResource("Animation_5mrsh"),
+&"fade_out": SubResource("Animation_safpt")
+}
+
+[sub_resource type="GDScript" id="GDScript_368ro"]
+script/source = "extends Panel
+
+
+func _on_botao_nao_pressed() -> void:
+	visible = false
+
+
+func _on_botao_sim_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://levels/Menu.tscn\")
+"
+
+[node name="Level" type="Node3D" unique_id=1477759923]
+script = ExtResource("1_3ca7f")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1833327117]
+environment = SubResource("Environment_d5x7l")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1999062118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0596845, 1.0479982, -4.747121)
+amount = 30
+lifetime = 12.0
+preprocess = 10.0
+process_material = SubResource("ParticleProcessMaterial_kogck")
+draw_pass_1 = SubResource("QuadMesh_tn76l")
+
+[node name="floor" type="StaticBody3D" parent="." unique_id=990022842]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.111456394, -4.4450836)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=1038136750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2823915, 0.14024204, 0)
+shape = SubResource("BoxShape3D_umreq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=183016191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2697487, 0.13385212, -0.033495903)
+material_override = SubResource("StandardMaterial3D_hjsbj")
+mesh = SubResource("BoxMesh_80vhd")
+
+[node name="asfalto" type="MeshInstance3D" parent="floor" unique_id=1175427900]
+transform = Transform3D(-6.0961554e-08, 0, 15.572918, 0, 0.018659355, 0, -1.3946378, 0, -6.8071387e-07, 2.7360504, 0.62816024, 0.38089466)
+material_override = SubResource("StandardMaterial3D_hy0rb")
+mesh = SubResource("BoxMesh_mxp4k")
+
+[node name="asfalto2" type="MeshInstance3D" parent="floor" unique_id=239239981]
+transform = Transform3D(-1.3946378, 0, -6.627419e-07, 0, 0.018659355, 0, 1.2192311e-07, 0, -7.5808835, 5.8428493, 0.62816024, -4.114253)
+material_override = SubResource("StandardMaterial3D_hy0rb")
+mesh = SubResource("BoxMesh_mxp4k")
+
+[node name="asfalto6" type="MeshInstance3D" parent="floor" unique_id=1759024356]
+transform = Transform3D(-6.096155e-08, 0, 16.147804, 0, 0.018659355, 0, -1.3946377, 0, -7.05843e-07, 2.383637, 0.62816024, -6.7942524)
+material_override = SubResource("StandardMaterial3D_hy0rb")
+mesh = SubResource("BoxMesh_mxp4k")
+
+[node name="asfalto4" type="MeshInstance3D" parent="floor" unique_id=1329972164]
+transform = Transform3D(-1.3946378, 0, -6.627419e-07, 0, 0.018659355, 0, 1.2192311e-07, 0, -7.5808835, 5.8428493, 0.62816024, 4.840249)
+material_override = SubResource("StandardMaterial3D_hy0rb")
+mesh = SubResource("BoxMesh_mxp4k")
+
+[node name="asfalto3" type="MeshInstance3D" parent="floor" unique_id=1471062775]
+transform = Transform3D(-1.3946378, 0, -6.627419e-07, 0, 0.018659355, 0, 1.2192311e-07, 0, -7.5808835, -2.6146665, 0.62816024, -4.114253)
+material_override = SubResource("StandardMaterial3D_hy0rb")
+mesh = SubResource("BoxMesh_mxp4k")
+
+[node name="asfalto5" type="MeshInstance3D" parent="floor" unique_id=936145041]
+transform = Transform3D(-1.3946378, 0, -6.627419e-07, 0, 0.018659355, 0, 1.2192311e-07, 0, -7.5808835, -2.661097, 0.62816024, 4.796116)
+material_override = SubResource("StandardMaterial3D_hy0rb")
+mesh = SubResource("BoxMesh_mxp4k")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="floor" unique_id=1039139395]
+transform = Transform3D(0.38861638, 0, 0, 0, 1.6664565, 0, 0, 0, 15.030692, -5.0463395, 1.4060278, -0.1916275)
+material_override = SubResource("StandardMaterial3D_368ro")
+mesh = SubResource("BoxMesh_368ro")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor/MeshInstance3D2" unique_id=1286058552]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/MeshInstance3D2/StaticBody3D" unique_id=2109796208]
+shape = SubResource("ConcavePolygonShape3D_368ro")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="floor" unique_id=301995383]
+transform = Transform3D(0.38861638, 0, 0, 0, 1.6664565, 0, 0, 0, 15.030692, 9.329245, 1.4060278, -0.1916275)
+material_override = SubResource("StandardMaterial3D_368ro")
+mesh = SubResource("BoxMesh_368ro")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor/MeshInstance3D4" unique_id=949669312]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/MeshInstance3D4/StaticBody3D" unique_id=613585564]
+shape = SubResource("ConcavePolygonShape3D_3ca7f")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="floor" unique_id=600692898]
+transform = Transform3D(-1.6986961e-08, 0, 14.593426, 0, 1.6664565, 0, -0.38861638, 0, -6.378989e-07, 2.057241, 1.4060278, 7.2276974)
+material_override = SubResource("StandardMaterial3D_368ro")
+mesh = SubResource("BoxMesh_368ro")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor/MeshInstance3D3" unique_id=970206246]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/MeshInstance3D3/StaticBody3D" unique_id=1126704414]
+shape = SubResource("ConcavePolygonShape3D_kogck")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="floor" unique_id=960960563]
+transform = Transform3D(-1.6986961e-08, 0, 14.593426, 0, 1.6664565, 0, -0.38861638, 0, -6.378989e-07, 2.057241, 1.4060278, -7.2635536)
+material_override = SubResource("StandardMaterial3D_368ro")
+mesh = SubResource("BoxMesh_368ro")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor/MeshInstance3D5" unique_id=1146317760]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/MeshInstance3D5/StaticBody3D" unique_id=777762214]
+shape = SubResource("ConcavePolygonShape3D_574oa")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=724743116]
+transform = Transform3D(-0.07106227, 0.8010369, 0.59438205, 0, -0.59588856, 0.80306715, 0.99747187, 0.05706777, 0.042345192, 0.83094025, 15.367115, 14.252049)
+light_color = Color(0.16965562, 0.09182935, 0.059174947, 1)
+light_energy = 1.201
+light_indirect_energy = 0.346
+
+[node name="player" parent="." unique_id=2118297559 instance=ExtResource("2_hjsbj")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.8757138, 0.8100857, -4.7581854)
+
+[node name="casa_amelie" parent="." unique_id=1726834104 instance=ExtResource("3_cwqvt")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 2.1114836, 0.4226402, -7.4226484)
+
+[node name="diario" parent="." unique_id=817055257 instance=ExtResource("4_safpt")]
+transform = Transform3D(-0.18840928, 1.1098404e-09, -0.23345649, -0.05277033, 0.29223543, 0.042587895, 0.22741422, 0.06781179, -0.1835329, 2.8978572, 0.5765241, -6.8653474)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1280102894]
+
+[node name="Fade" type="ColorRect" parent="CanvasLayer" unique_id=922060886]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="InteragirLabel" type="Label" parent="CanvasLayer" unique_id=1359403307]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -11.5
+offset_right = 86.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("10_ukwr8")
+theme_override_font_sizes/font_size = 25
+text = "Clique E para interagir"
+
+[node name="HistoriaImagem" type="TextureRect" parent="CanvasLayer" unique_id=107307164]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -289.0
+offset_top = -284.0
+offset_right = 1129.2
+offset_bottom = 825.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.40000045, 0.32)
+
+[node name="HistoriaTexto" type="Label" parent="CanvasLayer" unique_id=1942571335]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 466.0
+offset_right = 20.0
+offset_bottom = 489.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("10_ukwr8")
+theme_override_font_sizes/font_size = 25
+
+[node name="EscolhaPanel" type="Panel" parent="CanvasLayer" unique_id=1939479213]
+visible = false
+offset_left = 410.0
+offset_top = 290.0
+offset_right = 450.0
+offset_bottom = 330.0
+
+[node name="BotaoArmario" type="Button" parent="CanvasLayer/EscolhaPanel" unique_id=1149227339]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 76.0
+offset_right = 451.0
+offset_bottom = 107.0
+text = "Se esconder no guarda-roupa."
+
+[node name="BotaoCama" type="Button" parent="CanvasLayer/EscolhaPanel" unique_id=1048921401]
+layout_mode = 0
+offset_left = -107.0
+offset_top = 74.0
+offset_right = 143.0
+offset_bottom = 105.0
+text = "Se esconder Em baixo da cama."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" unique_id=1047470641]
+libraries/ = SubResource("AnimationLibrary_safpt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=469464842]
+stream = ExtResource("4_5mrsh")
+
+[node name="passo-homem" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=1827371020]
+stream = ExtResource("6_vnv7o")
+volume_db = 1.132
+
+[node name="coracao" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=1094747171]
+stream = ExtResource("7_d5x7l")
+volume_db = 10.217
+
+[node name="som_fala" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=1400257343]
+stream = ExtResource("8_rtcij")
+volume_db = 18.048
+pitch_scale = 0.6
+
+[node name="som_ligacao" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=1469938651]
+stream = ExtResource("9_rtcij")
+volume_db = -4.072
+
+[node name="ObjetivoLabel" type="Label" parent="CanvasLayer" unique_id=2089234860]
+offset_left = 15.0
+offset_top = 27.0
+offset_right = 522.0
+offset_bottom = 51.0
+theme_override_fonts/font = ExtResource("10_ukwr8")
+theme_override_font_sizes/font_size = 25
+text = "-> Procurei o alguma pista na casa da Amelie."
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1116848570]
+stream = ExtResource("12_hy0rb")
+volume_db = 24.0
+pitch_scale = 3.01
+autoplay = true
+
+[node name="carro" parent="." unique_id=456436825 instance=ExtResource("13_mxp4k")]
+transform = Transform3D(-1.3113417e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.3113417e-08, -0.8242548, 0.7088597, -2.9797637)
+
+[node name="Sketchfab_Scene2" parent="." unique_id=1383526383 instance=ExtResource("14_d7v53")]
+transform = Transform3D(0.22, 0, 0, 0, 0.22, 0, 0, 0, 0.22, -4.0393896, 0.50333405, -5.753612)
+
+[node name="casas1" parent="." unique_id=84806039 instance=ExtResource("15_0qmeg")]
+transform = Transform3D(-0.5999255, 0, -0.009455809, 0, 0.6, 0, 0.009455809, 0, -0.5999255, 3.0962424, 0.9344536, -0.90739036)
+
+[node name="poste-luz" parent="." unique_id=2127202194 instance=ExtResource("16_ta7ci")]
+transform = Transform3D(-0.29996276, 0, -0.0047279047, 0, 0.3, 0, 0.0047279047, 0, -0.29996276, 1.1340308, 0.5205692, -3.2711515)
+
+[node name="poste-luz7" parent="." unique_id=1303616643 instance=ExtResource("16_ta7ci")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.7653747, 0.5205692, -4.9275246)
+
+[node name="poste-luz9" parent="." unique_id=1860348017 instance=ExtResource("16_ta7ci")]
+transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 5.047881, 0.5205692, -0.45741916)
+
+[node name="poste-luz10" parent="." unique_id=220056749 instance=ExtResource("16_ta7ci")]
+transform = Transform3D(-1.3113417e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.3113417e-08, 6.6500263, 0.5205692, -8.400069)
+
+[node name="poste-luz2" parent="." unique_id=1261511073 instance=ExtResource("16_ta7ci")]
+transform = Transform3D(-0.29996276, 0, -0.0047279047, 0, 0.3, 0, 0.0047279047, 0, -0.29996276, 7.918554, 0.5205692, -3.2711515)
+
+[node name="poste-luz11" parent="." unique_id=234076346 instance=ExtResource("16_ta7ci")]
+transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 4.903517, 0.5205692, -5.0128183)
+
+[node name="poste-luz3" parent="." unique_id=989332247 instance=ExtResource("16_ta7ci")]
+transform = Transform3D(-1.3113417e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.3113417e-08, -1.7850995, 0.5205692, -0.32042885)
+
+[node name="poste-luz8" parent="." unique_id=636949566 instance=ExtResource("16_ta7ci")]
+transform = Transform3D(-0.3, 0, -2.6226834e-08, 0, 0.3, 0, 2.6226834e-08, 0, -0.3, -3.853355, 0.5205692, -3.2230628)
+
+[node name="poste-luz5" parent="." unique_id=1606154836 instance=ExtResource("16_ta7ci")]
+transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, -3.5093405, 0.5205692, -8.406527)
+
+[node name="poste-luz6" parent="." unique_id=573061816 instance=ExtResource("16_ta7ci")]
+transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 4.647731, 0.5205692, -10.268567)
+
+[node name="casas3" parent="." unique_id=252348206 instance=ExtResource("17_lh335")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, 9.480193, 0.23063874, -11.321007)
+
+[node name="arvore" parent="." unique_id=1493760352 instance=ExtResource("18_u6cys")]
+transform = Transform3D(0.909541, 0, -0.41561416, 0, 1, 0, 0.41561416, 0, 0.909541, 8.366534, 0.56434834, -1.8878887)
+
+[node name="arvore2" parent="." unique_id=1492972470 instance=ExtResource("18_u6cys")]
+transform = Transform3D(0.909541, 0, -0.41561416, 0, 1, 0, 0.41561416, 0, 0.909541, 8.366534, 0.56434834, 1.1408572)
+
+[node name="arvore3" parent="." unique_id=1627328566 instance=ExtResource("18_u6cys")]
+transform = Transform3D(0.909541, 0, -0.41561416, 0, 1, 0, 0.41561416, 0, 0.909541, 3.1916714, 0.51966786, 1.7383938)
+
+[node name="arvore4" parent="." unique_id=448116454 instance=ExtResource("18_u6cys")]
+transform = Transform3D(0.8144296, 0, -0.58026236, 0, 1, 0, 0.58026236, 0, 0.8144296, -0.06431246, 0.51966786, 1.7383938)
+
+[node name="arvore5" parent="." unique_id=1216574389 instance=ExtResource("18_u6cys")]
+transform = Transform3D(0.43948457, 0, 0.8982501, 0, 1, 0, -0.8982501, 0, 0.43948457, -3.6973948, 0.51966786, 1.7383938)
+
+[node name="arvore6" parent="." unique_id=1199905318 instance=ExtResource("18_u6cys")]
+transform = Transform3D(0.6648523, 0, 0.7469747, 0, 1, 0, -0.7469747, 0, 0.6648523, -3.6973948, 0.51966786, -1.3156118)
+
+[node name="Sketchfab_Scene3" parent="." unique_id=1802545162 instance=ExtResource("19_368ro")]
+transform = Transform3D(-0.4, 0, -3.4969112e-08, 0, 0.4, 0, 3.4969112e-08, 0, -0.4, 0.17567873, 0.51829237, -2.2063537)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=978124678]
+
+[node name="ConfirmPanel" type="Panel" parent="CanvasLayer2" unique_id=516344729]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -212.0
+offset_top = 1.0
+offset_right = -172.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_368ro")
+
+[node name="PerguntaLabel" type="Label" parent="CanvasLayer2/ConfirmPanel" unique_id=302799949]
+layout_mode = 0
+offset_left = -50.0
+offset_top = -36.0
+offset_right = 477.0
+offset_bottom = -12.0
+theme_override_fonts/font = ExtResource("10_ukwr8")
+theme_override_font_sizes/font_size = 25
+text = "Você tem certeza que pegou a pista e quer continuar?"
+
+[node name="BotaoSim" type="Button" parent="CanvasLayer2/ConfirmPanel" unique_id=1533301455]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 7.0
+offset_right = 394.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("10_ukwr8")
+theme_override_font_sizes/font_size = 25
+text = "Sim"
+
+[node name="BotaoNao" type="Button" parent="CanvasLayer2/ConfirmPanel" unique_id=1023872394]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 5.0
+offset_right = 42.0
+offset_bottom = 36.0
+theme_override_fonts/font = ExtResource("10_ukwr8")
+theme_override_font_sizes/font_size = 25
+text = "Não"
+
+[node name="Label" type="Label" parent="CanvasLayer2" unique_id=1888993137]
+visible = false
+offset_left = 555.0
+offset_top = 500.0
+offset_right = 734.0
+offset_bottom = 523.0
+text = "Clique E para continuar"
+
+[node name="som_porta_carro" type="AudioStreamPlayer" parent="." unique_id=340575200]
+stream = ExtResource("21_kogck")
+volume_db = 11.508
+pitch_scale = 0.58
+
+[connection signal="pressed" from="CanvasLayer/EscolhaPanel/BotaoArmario" to="diario" method="_on_botao_armario_pressed"]
+[connection signal="pressed" from="CanvasLayer/EscolhaPanel/BotaoCama" to="diario" method="_on_botao_cama_pressed"]
+[connection signal="pressed" from="CanvasLayer2/ConfirmPanel/BotaoSim" to="." method="_on_botao_sim_pressed"]
+[connection signal="pressed" from="CanvasLayer2/ConfirmPanel/BotaoNao" to="." method="_on_botao_nao_pressed"]

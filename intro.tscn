@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://cyrbijx746d8v"]
+
+[ext_resource type="Script" uid="uid://chlfe71u855px" path="res://Scripts/intro.gd" id="1_7ba2f"]
+[ext_resource type="FontFile" uid="uid://bp7jf8u088ps6" path="res://Textures/rainyhearts.ttf" id="2_086ed"]
+[ext_resource type="VideoStream" uid="uid://djtjc5c4k6bb3" path="res://Textures/video2.ogv" id="3_086ed"]
+[ext_resource type="AudioStream" uid="uid://d0r1f06cnc1vr" path="res://musicas/teclas1.mp3" id="4_086ed"]
+[ext_resource type="AudioStream" uid="uid://b8ard6cjmkdks" path="res://musicas/musica-fundo1.mp3" id="5_086ed"]
+
+[sub_resource type="GDScript" id="GDScript_7ba2f"]
+
+[node name="Control" type="Control" unique_id=2006539900]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7ba2f")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1473707763]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -19.0
+offset_right = 32.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=523415147]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -249.0
+offset_top = -270.5
+offset_right = 1372.8718
+offset_bottom = 1176.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.32000062, 0.2)
+
+[node name="Label" type="Label" parent="." unique_id=774525737]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -458.0
+offset_top = -237.49997
+offset_right = 501.0
+offset_bottom = -42.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_086ed")
+theme_override_font_sizes/font_size = 30
+autowrap_mode = 3
+script = SubResource("GDScript_7ba2f")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=2113179921]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 94.0
+offset_right = 1426.0
+offset_bottom = 814.0
+stream = ExtResource("3_086ed")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1213805142]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=798103469]
+position = Vector2(840, 432)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1011745252]
+stream = ExtResource("4_086ed")
+volume_db = -10.023
+pitch_scale = 3.94
+
+[node name="Musica" type="AudioStreamPlayer" parent="." unique_id=801070540]
+stream = ExtResource("5_086ed")
+volume_db = 10.024
+pitch_scale = 0.71
+autoplay = true
