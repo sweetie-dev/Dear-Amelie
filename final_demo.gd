@@ -130,4 +130,4 @@ func _input(event: InputEvent) -> void:
 
 func ir_para_menu() -> void:
 	set_process(false)
-	get_tree().change_scene_to_file("res://levels/Menu.tscn")
+	get_tree().change_scene_to_file("res://Menu.tscn")
