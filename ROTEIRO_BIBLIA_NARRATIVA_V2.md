@@ -39,3 +39,15 @@ Separar a responsabilidade pelos assassinatos de qualquer generalização sobre 
 - Amelie era pequena quando Catherine morreu e sempre acreditou que a morte da irmã foi causada por um acidente.
 - Suas lembranças de Catherine são vagas, mas afetuosas: ela amava muito a irmã e guardava carinho por ela.
 - Amelie desconhecia que Mave matou Catherine e que os pais de Mave encobriram o caso.
+
+## Investigação de Amelie e motivo do assassinato (confirmado)
+- Amelie era apaixonada por casos criminais.
+- Depois da morte do namorado, Amelie começou a investigar o caso por conta própria.
+- A investigação fez Amelie desconfiar de sua amiga Mave.
+- Além do ciúme, o medo de perder a amizade de Amelie e de ser denunciada à polícia contribuiu para Mave matar Amelie.
+
+## Ideias opcionais para cenas (ainda não aprovadas)
+- Quarto com mural de investigação e anotações sobre o namorado.
+- Diário com suspeitas sem citar imediatamente o nome de Mave.
+- Página rasgada que revela o nome da suspeita apenas no jardim de lírios.
+- Possível ligação documental entre a investigação atual e o caso encoberto de Catherine: confirmar se Amelie chegou a descobrir algo sobre a morte da irmã antes de morrer.
