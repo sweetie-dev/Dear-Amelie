@@ -23,4 +23,4 @@ func iniciar_tempo_limite():
 	
 	# Muda automaticamente para a cena final do hospício/cutscene
 	# LEBRE-SE: Ajuste o caminho abaixo se o nome do seu arquivo for diferente!
-	get_tree().change_scene_to_file("res://levels/final_demo.tscn")
+	get_tree().change_scene_to_file("res://final_demo.tscn")

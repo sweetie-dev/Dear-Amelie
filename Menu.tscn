@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dy54fnvbki56v"]
 
 [ext_resource type="Texture2D" uid="uid://blmrqrhjy5smk" path="res://Textures/inicio-jardim.png" id="1_ikggh"]
-[ext_resource type="Script" uid="uid://82saa3xf3ugb" path="res://Scripts/menu.gd" id="1_qw3o3"]
+[ext_resource type="Script" uid="uid://82saa3xf3ugb" path="res://menu.gd" id="1_qw3o3"]
 [ext_resource type="FontFile" uid="uid://bgor1cesupyok" path="res://Textures/KiwiSoda.ttf" id="3_i4ne0"]
 [ext_resource type="Texture2D" uid="uid://1upebldtnt6b" path="res://Textures/cat respirando.png" id="3_wtpb2"]
 [ext_resource type="FontFile" uid="uid://bp7jf8u088ps6" path="res://Textures/rainyhearts.ttf" id="4_i4ne0"]
