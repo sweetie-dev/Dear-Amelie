@@ -42,7 +42,7 @@ func _on_botao_sim_pressed():
 		await som_porta_carro.finished
 	
 	# 4. Agora sim, muda para a próxima cena
-	get_tree().change_scene_to_file("res://levels/estrada.tscn") # Ou a sua próxima cena
+	get_tree().change_scene_to_file("res://estrada.tscn") # Ou a sua próxima cena
 
 func _on_botao_nao_pressed():
 	confirm_panel.visible = false
