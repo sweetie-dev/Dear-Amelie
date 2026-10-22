@@ -99,7 +99,7 @@ func _show_scene() -> void:
 		0:
 			heading.text = "PRÓLOGO • A CASA"
 			story.text = "A chuva cobre a estrada. À sua frente, a antiga casa de Amelie permanece em silêncio.\n\nCatherine: 'Precisamos entrar, Mave. Talvez ela tenha deixado alguma pista.'"
-			_button("Procurar a chave entre os vasos", func(): has_key = true; _go(1))
+			_button("Procurar a chave entre os vasos", func(): _take_key())
 			_button("Pedir que Catherine arrombe a porta", func(): _go(2))
 		1:
 			heading.text = "UMA CHAVE ENFERRUJADA"
@@ -117,11 +117,11 @@ func _show_scene() -> void:
 			heading.text = "QUARTO DE AMELIE"
 			story.text = "A cama está desfeita. Sobre a mesa há fotografias e recortes de notícias.\n\nUma lanterna foi esquecida ao lado da janela."
 			if not has_flashlight:
-				_button("Pegar a lanterna", func(): has_flashlight = true; _go(4))
+				_button("Pegar a lanterna", func(): _take_flashlight())
 			if has_flashlight and not found_photo:
-				_button("Examinar a fotografia antiga", func(): found_photo = true; _go(5))
+				_button("Examinar a fotografia antiga", func(): _find_photo())
 			if has_flashlight and not found_notes:
-				_button("Investigar os recortes de notícias", func(): found_notes = true; _go(6))
+				_button("Investigar os recortes de notícias", func(): _find_notes())
 			if found_photo and found_notes:
 				_button("Examinar a cama e procurar o diário", func(): _go(7))
 		5:
@@ -135,12 +135,12 @@ func _show_scene() -> void:
 		7:
 			heading.text = "PASSOS NO CORREDOR"
 			story.text = "Você encontra um diário debaixo do colchão.\n\nEntão, passos pesados se aproximam. A maçaneta começa a girar.\n\nCatherine: 'Mave, ESCONDE!'"
-			_button("Esconder-se no guarda-roupa", func(): choice_hide = "guarda-roupa"; _go(8))
-			_button("Esconder-se debaixo da cama", func(): choice_hide = "cama"; _go(8))
+			_button("Esconder-se no guarda-roupa", func(): _hide("guarda-roupa"))
+			_button("Esconder-se debaixo da cama", func(): _hide("cama"))
 		8:
 			heading.text = "NÃO FAÇA BARULHO"
 			story.text = "Você prende a respiração no seu esconderijo: " + choice_hide + ".\n\nUma sombra atravessa o quarto. Algo arranha o chão.\n\nO silêncio parece durar uma eternidade."
-			_button("Esperar até os passos desaparecerem", func(): found_diary = true; _go(9))
+			_button("Esperar até os passos desaparecerem", func(): _find_diary())
 		9:
 			heading.text = "O DIÁRIO"
 			story.text = "Catherine segura seu braço e conduz você para fora da casa.\n\nJá no carro, você abre o diário. Entre as páginas, encontra uma frase escrita com força:\n\n'NÃO CONFIE NA CATHERINE.'"
@@ -159,3 +159,27 @@ func _restart() -> void:
 	found_diary = false
 	choice_hide = ""
 	_go(0)
+
+func _take_key() -> void:
+	has_key = true
+	_go(1)
+
+func _take_flashlight() -> void:
+	has_flashlight = true
+	_go(4)
+
+func _find_photo() -> void:
+	found_photo = true
+	_go(5)
+
+func _find_notes() -> void:
+	found_notes = true
+	_go(6)
+
+func _hide(location: String) -> void:
+	choice_hide = location
+	_go(8)
+
+func _find_diary() -> void:
+	found_diary = true
+	_go(9)
