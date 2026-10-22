@@ -1,14 +1,14 @@
 extends Control
 ## Dear Amelie - vertical slice sem arquivos externos (Godot 4.6).
 ## Cenas: menu, jardim, corredor, quarto, carro, floresta, lirios, clinica.
-const W := 1280.0
-const H := 720.0
-const C_BG := Color("#0c111b")
-const C_FLOOR := Color("#252a36")
-const C_WALL := Color("#414251")
-const C_LIGHT := Color("#e7d7cb")
-const C_ACCENT := Color("#d2a8c9")
-const C_DANGER := Color("#ad5060")
+const W = 1280.0
+const H = 720.0
+const C_BG = Color("#0c111b")
+const C_FLOOR = Color("#252a36")
+const C_WALL = Color("#414251")
+const C_LIGHT = Color("#e7d7cb")
+const C_ACCENT = Color("#d2a8c9")
+const C_DANGER = Color("#ad5060")
 
 var stage := -1
 var player := Vector2(240, 440)
